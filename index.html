@@ -3,6 +3,48 @@
 <head>
 </head>
 <body>
-<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2Faldefouw%2Fredcap_cypress%2Fblob%2Fv13.1.37_rapid%2Fcypress%2Ffeatures%2Fcore%2FA%2FA.1.1.100%2520-%2520Run%2520Configuration%2520Check.feature&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on"></script>
+<div id="featureContainer"></div>
+<script>
+    // Create a new script element
+    var scriptElement = document.createElement('script');
+
+    // Get the query string from the URL
+    var queryString = window.location.search;
+
+    // Parse the query string to extract the GET variable
+    function getQueryVariable(variable) {
+        var query = queryString.substring(1); // Remove the leading "?" character
+        var vars = query.split('&');
+        for (var i = 0; i < vars.length; i++) {
+            var pair = vars[i].split('=');
+            if (decodeURIComponent(pair[0]) === variable) {
+                return decodeURIComponent(pair[1]);
+            }
+        }
+        // Variable not found
+        return null;
+    }
+
+    // Usage: Replace 'variableName' with the name of the GET variable you want to retrieve
+    var variableValue = getQueryVariable('rctf_feature_url');
+
+    if (variableValue !== null) {
+        // The GET variable 'variableName' was found, and its value is stored in 'variableValue'
+        console.log('GET variable value:', variableValue);
+    } else {
+        // The GET variable 'variableName' was not found in the URL
+        console.log('GET variable not found');
+    }
+
+    // Set the src attribute to the modifiedURL
+    scriptElement.src = `https://emgithub.com/embed-v2.js?target=${variableValue}&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on`;
+
+    // Append the script element to the HTML document
+    document.getElementById('featureContainer').appendChild(scriptElement);
+</script>
 </body>
 </html>
+
+
+
+
