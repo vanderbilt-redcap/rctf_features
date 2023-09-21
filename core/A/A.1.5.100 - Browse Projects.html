@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+<div id="featureContainer"></div>
+<script>
+    // Get the current URL
+    var currentURL = document.location.href;
+
+    // Extract the file name from the URL
+    var fileNameWithExtension = currentURL.substring(currentURL.lastIndexOf("/") + 1);
+
+    // Remove the file extension (e.g., ".html")
+    var fileNameWithoutExtension = fileNameWithExtension.replace(/\.html$/, '');
+
+    // Create a new script element
+    var scriptElement = document.createElement('script');
+
+    // Set the src attribute to the modifiedURL
+    scriptElement.src = `https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2Faldefouw%2Fredcap_cypress%2Fblob%2Fv13.1.37_rapid%2Fcypress%2Ffeatures%2Fcore%2FA%2F${fileNameWithoutExtension}.feature&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on`;
+
+    // Append the script element to the HTML document
+    document.getElementById('featureContainer').appendChild(scriptElement);
+</script>
+</body>
+</html>
