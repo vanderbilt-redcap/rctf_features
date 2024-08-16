@@ -37,7 +37,7 @@
     }
 
     // Set the src attribute to the modifiedURL
-    scriptElement.src = `https://emgithub.com/embed-v2.js?target=${variableValue}&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on`;
+    scriptElement.src = `https://emgithub.com/embed-v2.js?target=${encodeURIComponent(variableValue)}&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on`;
 
     // Append the script element to the HTML document
     document.getElementById('featureContainer').appendChild(scriptElement);
