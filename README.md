@@ -1,0 +1,1 @@
+This project is used to help implement reports in the `REDCap Functional Requirements` REDCap projects that publish the validation results for REDCap LTS builds.  For more details on the portion of validation automation via cypress, see the [REDCap Cypress Developer Toolkit](https://github.com/vanderbilt-redcap/redcap_cypress_docker/blob/main/README.md). 
